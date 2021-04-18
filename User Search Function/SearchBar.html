@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<?php
+    include("./DatabaseConnect.php")
+?>
+<HTML>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, width=device-width">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css.css">
+</head>
+
+<body>
+    <div id= "main" class="shadow-box">
+        <div id="content">
+            <center>
+            <form action="" method="GET" name="">
+               <table>
+                   <tr>
+                        <td><input type="text" name="searchUser" placeholder="Enter userID here..." size=50></td>
+                        <td><input type="submit" name=" " value="Search"></td>
+                   </tr>
+               </table> 
+            </form>
+            </center>
+
+            <?php
+            <!--check if search info was provided-->
+                if(isset($_GET['searchUser']) && $GET['searchUser'] != ''){
+            
+                    $search = trim($_GET['searchUser']);
+
+                    $query = "SELECT idUsers, emailUsers FROM users WHERE ";
+                    $display_search = " ";
+                    
+                    <!--seperate keywords-->
+                    $keywords = explode(' ', $searchUser);
+                    foreach($keywords $word){
+                        $query .= " keywords LIKE '%" .$word."%' OR ";
+                        $display_search .= $word." "  ;                  }
+                    $query = substr($query, 0, strlen($query) - 3);
+
+                    <!--Connect to DB-->
+                    /connect to loginsystem DB
+                    $conn = mysql_connect(DB_SERVER, DB_USER, DB_PASS, DB_NAME);
+
+                    $query = mysql_query($conn, $query);
+                    $resultAmount = mysql_num_rows($query);
+
+                    <!--verify if any results are found-->
+                    if($resultAmount > 0){
+                        echo 'Search for <i>'.$display_words.'</i> </hr> <br>';
+
+                        echo '<table class="search">';
+                        <!--show all search results-->
+                        while($row = mysql_fetch_assoc($query)){
+
+                            echo '<tr>
+                                <td><strong>'.$row['idUsers'].'</strong></td>
+                            </tr>
+                            <tr>
+                                <td>'.$row['emailUsers'].'</td>
+                            </tr>';
+                        }
+                        echo '</table>';
+                    }
+                    else
+                        echo 'No results found! Please search for something else.';
+                }
+                else
+                    echo ' ';
+
+             ?>
+
+        </div>           
+    </div>
+
+</body>
+</HTML>
