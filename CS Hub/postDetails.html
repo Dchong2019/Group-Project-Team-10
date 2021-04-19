@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<htmL lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, inital-scale=1.0">
+    <title>CS Community Post Info</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/CsCommunityBoard.css">
+</head>
+
+
+<body>
+    <h1 style="color:green; text-align: center; font-size: 40px"> CS Community</h1>
+    <header>
+        <!--Search Bar-->
+        <div class="search-bar">
+            <div>
+                <select name="" id="">
+                    <option value="All">All</option>
+                    <option value="Descriptions">Descriptions</option>
+                </select>
+                <input type="text" name="searchfor" placeholder="Enter search here...">
+                <button>Submit</button>
+            </div>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="topic-container">
+            <div class="head">
+                <div class="author">User</div>
+                <div class="topic">Topic</div>
+            </div>
+            <div class="main">
+                <div class="authors">
+                    <div class="username"><a href=""><p class="left">someUser</p></a></div>
+                </div>
+                <div class="topic">
+                    <p class="right">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean risus enim, dignissim nec lobortis sed, bibendum in erat. Pellentesque in turpis eget nunc interdum ornare sed sed tellus. Ut cursus varius laoreet. Morbi eu diam ac est venenatis varius in eget elit. Etiam ac sapien iaculis, scelerisque enim quis, dignissim nunc. Etiam ac tellus sed tortor viverra tempus nec eu metus. Quisque porttitor bibendum nunc, sed dapibus augue faucibus id. Morbi eu nibh porttitor tellus interdum congue et et nibh.</p>
+                </div>
+                <div class="comment">
+                    <button onclick="showComment()">Comment</button>
+                </div>
+                <br><br><br>
+            </div>
+        </div>
+    </div>
+    <br><br><br>
+
+    <!--Write comments here-->
+    <div class="typed-comment hide" id="comment-area" style="display: none;">
+        <textarea name="comment" id="" rows="5" cols="200" placeholder="Enter comment..."></textarea>
+        <input type="submit" value="submit">
+    </div>
+    <br><br><br>
+    <!--Display coments made-->
+    <div class="comments-container">
+        <div class="head">
+            <div class="author">User</div>
+            <div class="topic">Comments</div>
+        </div>
+        <div class="main">
+            <div class="authors">
+                <div class="username"><a href=""><p class="left">someUser2</p></a></div>
+            </div>
+            <div class="topic">
+                <p class="right">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean risus enim, dignissim nec lobortis sed, bibendum in erat. Pellentesque in turpis eget nunc interdum ornare sed sed tellus. Ut cursus varius laoreet. Morbi eu diam ac est venenatis varius in eget elit. Etiam ac sapien iaculis, scelerisque enim quis, dignissim nunc. Etiam ac tellus sed tortor viverra tempus nec eu metus. Quisque porttitor bibendum nunc, sed dapibus augue faucibus id. Morbi eu nibh porttitor tellus interdum congue et et nibh.</p>
+            </div>
+            <div class="comment">
+                    <button onclick="showReply()">Reply</button>
+            </div>
+        </div>
+    </div>
+
+    <!--show replies here-->
+    <div class="typed-comment hide" id="reply-area" style="display: none;">
+        <textarea name="comment" id="" rows="5" cols="200" placeholder="Enter reply..."></textarea>
+        <input type="submit" value="submit">
+    </div>
+    <br><br><br>
+    <footer>
+        <span>&copy; &nbsp; WhootChat</span>
+    </footer>
+    <script src="CsHub.js"></script>
+</body>
+</htmL>

@@ -1,0 +1,174 @@
+*{
+    box-sizing: border-box;
+}
+html{
+    font-size: 14px;
+}
+a{
+    color: green;
+    font-weight: bolder;
+    text-decoration: none;
+}
+h1{
+    font-weight: bolder;
+}
+html, body{
+    height: 100%
+}
+body{
+    display: flex;
+    flex-direction: column;
+}
+
+.container{
+    flex: 1 0 auto;
+    margin: 20px;
+    padding: 20px;
+}
+.communityforum{
+    margin-top: 20px;
+}
+.community-header{
+    padding: 5px;
+    border-radius: 5px;
+    margin: 4px;
+}
+.community-description *{
+    margin-block: 0;
+    text-align: left;  
+}
+.community-row{
+    display: grid;  /*align content in one line*/
+    grid-template-columns: 60% 13% 20%;
+}
+.community-column{
+    padding: 10px;
+    margin: 4px;
+    border-radius: 5px;
+}
+.communiy-divider{
+    display: none;
+}
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/*search bar*/
+.search-bar{
+    border: solid 1 px; 
+    margin-top: 20px;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    box-shadow: 2px 3px 4px;
+}
+
+.search-bar select{
+    padding: 10px;
+}
+
+.search-bar input{
+    padding: 10px;
+}
+
+.search-bar button:hover{
+    cursor: pointer;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+/*table*/
+table{ 
+    border-collapse: collapse;
+}
+th{
+    padding: 10px;
+    background-color: lightgreen;
+}
+th, td{
+    font-size: 15px;
+    width: 500px;
+    text-align: center;
+    padding: 5px;
+}
+
+.num-of-pages{
+    padding: 10px;
+    font-size: 13px;
+}
+.num-of-pages a{
+    padding: 5px 10px;
+    font-size: 13px;
+    margin-inline: 5px;
+}
+
+/*footer*/
+footer{
+    flex-shrink: 0;
+    margin-top: 20px;
+    padding: 20px;
+    background-color:lightgray;
+    display: block;
+    text-align: center;
+}
+
+/*post details file*/
+.container{
+    margin: inherit;
+}
+.head{
+    display: block;
+    align-content: left;
+    font-size: 20px;
+    font-weight: bolder;
+    padding: 1px;
+    border: 2px solid lightslategray;
+    background-color: lightslategray ;
+}
+.body{
+    display: flex;
+    padding: 10px;
+    margin-top: 20px;
+}
+.body .authors .topic{
+    font-size: 20px; 
+}
+.right{
+    text-align: right;
+    height: 180px;
+    width: 400px;
+    float: right;
+}
+.left{
+    text-align: left;
+    height: 180px;
+    width: 400px;
+    float: left;
+}
+.topic{
+    flex: 20%;
+    text-align: right;
+}
+.body .topic .comment button{
+    border: none;
+    padding: 10px;
+    float: right;
+}
+.typed-comment textarea{
+    width: 100%;
+    min-height: 100px;
+    padding: 10px;
+    margin-block: 10px;
+}
+.typed-comment input{
+    float: right;
+    padding: 5px;
+    border-radius: 10px;
+}
+.typed-comment input:hover{
+    border: solid 2px black;
+}
+.comments-container{
+    margin-top: 50px;
+}
